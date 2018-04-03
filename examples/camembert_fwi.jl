@@ -72,5 +72,6 @@ maxeval!(opt, 16)
 (minf, minx, ret) = optimize(opt, vec(model0.m))
 
 # Plot result
-figure(); imshow(sqrt.(1f0 ./ reshape(minx, model0.n))')
+minx = reshape(minx, model0.n)[301:501, 301:501]
+figure(); imshow(sqrt.(1f0 ./ minx)', vmin=1.8, vmax=2.4)
 
